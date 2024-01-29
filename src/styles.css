@@ -1,4 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import "@fontsource/inter/100.css";
+@import "@fontsource/inter/200.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/800.css";
+@import "@fontsource/inter/900.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen font-inter;
+  }
+}
+
+
+@layer utilities {
+  .form-group {
+    @apply flex flex-col w-full;
+  }
+}
+
+@layer components {
+  /* Input */
+  .input-field {
+    @apply !w-full -ml-10 pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500 !important;
+  }
+
+  .btn {
+    @apply py-3 text-base font-medium rounded text-white w-full transition duration-300;
+  }
+
+  .btn-green {
+    @apply bg-indigo-800 w-full hover:bg-indigo-700;
+  }
+}
