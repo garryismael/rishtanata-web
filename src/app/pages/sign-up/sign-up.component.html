@@ -1,35 +1,35 @@
 <div
-  class="min-w-screen min-h-screen bg-white flex items-center justify-center px-5 py-5">
+  class="flex items-center justify-center min-h-screen px-5 py-5 bg-white min-w-screen">
   <div
-    class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
+    class="w-full overflow-hidden text-gray-500 bg-gray-100 shadow-xl rounded-3xl"
     style="max-width:1000px">
-    <div class="md:flex w-full">
+    <div class="w-full md:flex">
       <div
-        class="hidden md:flex md:justify-center w-1/2 bg-indigo-500 py-10 px-10">
+        class="hidden w-1/2 px-10 py-10 bg-indigo-500 md:flex md:justify-center">
         <img ngSrc="/assets/images/user.svg" height="747" width="744" />
       </div>
 
-      <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
-        <div class="text-center mb-10">
-          <h1 class="font-bold text-3xl text-gray-900">REGISTER</h1>
+      <div class="w-full px-5 py-10 md:w-1/2 md:px-10">
+        <div class="mb-10 text-center">
+          <h1 class="text-3xl font-bold text-gray-900">REGISTER</h1>
           <p>Enter your information to register</p>
         </div>
         <div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="text-xs font-semibold px-1">Full Name</label>
-              <div class="flex ml-10 w-full">
+              <label for class="px-1 text-xs font-semibold">Full Name</label>
+              <div class="flex w-full ml-10">
                 <input type="text"
                   class="input-field"
-                  placeholder="Your full name">
+                  placeholder="Enter your full name">
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="text-xs font-semibold px-1">Gender</label>
-              <div class="flex ml-1 w-full">
-                <input type="radio" name="gender" id="male" value="male"/>
+              <label for class="px-1 text-xs font-semibold">Gender</label>
+              <div class="flex w-full ml-1">
+                <input type="radio" name="gender" checked id="male" value="male"/>
                 <label class="ml-1" for="male">Male</label>
                 <input class="ml-4" type="radio" name="gender" id="female" value="female"/>
                 <label class="ml-1" for="female">Female</label>
@@ -39,47 +39,47 @@
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="text-xs font-semibold px-1">Email</label>
-              <div class="flex ml-10 w-full">
+              <label for class="px-1 text-xs font-semibold">Email</label>
+              <div class="flex w-full ml-10">
                 <input type="email"
                   class="input-field"
-                  placeholder="johnsmith@example.com">
+                  placeholder="Email address">
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="text-xs font-semibold px-1">Date of
+              <label for class="px-1 text-xs font-semibold">Date of
                 birth</label>
-              <div class="flex ml-10 w-full">
+              <div class="flex w-full ml-10">
                 <input type="email"
                   class="input-field"
-                  placeholder="johnsmith@example.com">
+                  placeholder="Date of birth">
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="text-xs font-semibold px-1">Phone Number</label>
-              <div class="flex ml-10 w-full">
+              <label for class="px-1 text-xs font-semibold">Phone Number</label>
+              <div class="flex w-full ml-10">
                 <input type="email"
                   class="input-field"
-                  placeholder="johnsmith@example.com">
+                  placeholder="Phone number">
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="text-xs font-semibold px-1">Password</label>
-              <div class="flex ml-10 w-full">
+              <label for class="px-1 text-xs font-semibold">Password</label>
+              <div class="flex w-full ml-10">
                 <input type="password"
                   class="input-field"
-                  placeholder="Your Password">
+                  placeholder="Enter password">
               </div>
             </div>
           </div>
           <div class="flex -mx-2">
-            <div class="w-full px-3 mb-6 flex items-center gap-1">
+            <div class="flex items-center w-full gap-1 px-3 mb-6">
               <span>Do you have an account?</span>
               <a routerLink="/auth/sign-in" class="text-indigo-500">login here</a>
             </div>
@@ -87,7 +87,7 @@
           <div class="flex -mx-3">
             <div class="w-full">
               <button
-                class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER
+                class="text-white bg-indigo-500 rounded-lg btn hover:bg-indigo-700 focus:bg-indigo-700">REGISTER
                 NOW</button>
             </div>
           </div>

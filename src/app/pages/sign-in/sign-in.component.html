@@ -1,42 +1,47 @@
 <div
-  class="min-w-screen min-h-screen bg-white flex items-center justify-center px-5 py-5">
+  class="flex items-center justify-center min-h-screen px-5 py-5 bg-white min-w-screen">
   <div
-    class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
+    class="w-full overflow-hidden text-gray-500 bg-gray-100 shadow-xl rounded-3xl"
     style="max-width:1000px">
-    <div class="md:flex w-full">
+    <div class="w-full md:flex">
       <div
-        class="hidden md:flex md:justify-center w-1/2 bg-indigo-500 py-10 px-10">
+        class="hidden w-1/2 px-10 py-10 bg-indigo-500 md:flex md:justify-center">
         <img ngSrc="/assets/images/user.svg" height="747" width="744" />
       </div>
 
-      <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
-        <div class="text-center mb-10">
-          <h1 class="font-bold text-3xl text-gray-900">LOGIN</h1>
+      <div class="w-full px-5 py-10 md:w-1/2 md:px-10">
+        <div class="mb-10 text-center">
+          <h1 class="text-3xl font-bold text-gray-900">LOGIN</h1>
           <p>Enter your information to login</p>
         </div>
         <div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="text-xs font-semibold px-1">Email</label>
-              <div class="flex ml-10 w-full">
+              <label for class="px-1 text-xs font-semibold">Email</label>
+              <div class="flex w-full ml-10">
                 <input type="email"
                   class="input-field"
-                  placeholder="johnsmith@example.com">
+                  placeholder="Your email address">
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
-            <div class="w-full px-3 mb-6">
-              <label for class="text-xs font-semibold px-1">Password</label>
-              <div class="flex ml-10 w-full">
+            <div class="w-full px-3 mb-2">
+              <label for class="px-1 text-xs font-semibold">Password</label>
+              <div class="flex w-full ml-10">
                 <input type="password"
                   class="input-field"
-                  placeholder="Your Password">
+                  placeholder="Your password">
               </div>
             </div>
           </div>
           <div class="flex -mx-2">
-            <div class="w-full px-3 mb-12 flex items-center gap-1">
+            <div class="flex items-center w-full gap-1 px-3 mb-5">
+              <a routerLink="/auth/sign-up" class="text-indigo-500">forgot password?</a>
+            </div>
+          </div>
+          <div class="flex -mx-2">
+            <div class="flex items-center w-full gap-1 px-3 mb-12">
               <span>You don't have an account?</span>
               <a routerLink="/auth/sign-up" class="text-indigo-500">register here</a>
             </div>
@@ -44,7 +49,7 @@
           <div class="flex -mx-3">
             <div class="w-full">
               <button
-                class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">LOGIN</button>
+                class="text-white bg-indigo-500 rounded-lg btn hover:bg-indigo-700 focus:bg-indigo-700">LOGIN</button>
             </div>
           </div>
         </div>

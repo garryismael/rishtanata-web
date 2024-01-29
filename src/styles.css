@@ -36,7 +36,7 @@
   }
 
   .btn {
-    @apply py-3 text-base font-medium rounded text-white w-full transition duration-300;
+    @apply block w-full max-w-xs px-3 py-3 mx-auto font-semibold text-white rounded-lg;
   }
 
   .btn-green {
