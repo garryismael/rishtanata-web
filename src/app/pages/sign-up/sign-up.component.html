@@ -1,11 +1,7 @@
-<div
-  class="flex items-center justify-center min-h-screen px-5 py-5 bg-white min-w-screen">
-  <div
-    class="w-full overflow-hidden text-gray-500 bg-gray-100 shadow-xl rounded-3xl"
-    style="max-width:1000px">
+<div class="flex items-center justify-center min-h-screen px-5 py-5 bg-white min-w-screen">
+  <div class="w-full overflow-hidden text-gray-500 bg-gray-100 shadow-xl rounded-3xl" style="max-width: 1000px">
     <div class="w-full md:flex">
-      <div
-        class="hidden w-1/2 px-10 py-10 bg-indigo-500 md:flex md:justify-center">
+      <div class="hidden w-1/2 px-10 py-10 bg-indigo-500 md:flex md:justify-center">
         <img ngSrc="/assets/images/user.svg" height="747" width="744" />
       </div>
 
@@ -14,14 +10,13 @@
           <h1 class="text-3xl font-bold text-gray-900">REGISTER</h1>
           <p>Enter your information to register</p>
         </div>
-        <div>
+        <form [formGroup]="signUpForm" #form="ngForm" (ngSubmit)="submit()">
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="px-1 text-xs font-semibold">Full Name</label>
+              <label for="full_name" class="px-1 text-xs font-semibold">Full Name</label>
               <div class="flex w-full ml-10">
-                <input type="text"
-                  class="input-field"
-                  placeholder="Enter your full name">
+                <input id="full_name" formControlName="full_name" type="text" class="input-field"
+                  placeholder="Enter your full name" />
               </div>
             </div>
           </div>
@@ -29,52 +24,36 @@
             <div class="w-full px-3 mb-5">
               <label for class="px-1 text-xs font-semibold">Gender</label>
               <div class="flex w-full ml-1">
-                <input type="radio" name="gender" checked id="male" value="male"/>
+                <input type="radio" formControlName="gender" id="male" value="male" />
                 <label class="ml-1" for="male">Male</label>
-                <input class="ml-4" type="radio" name="gender" id="female" value="female"/>
+                <input class="ml-4" type="radio" formControlName="gender" id="female" value="female" />
                 <label class="ml-1" for="female">Female</label>
-
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="px-1 text-xs font-semibold">Email</label>
+              <label for="email" class="px-1 text-xs font-semibold">Email</label>
               <div class="flex w-full ml-10">
-                <input type="email"
-                  class="input-field"
-                  placeholder="Email address">
+                <input id="email" type="email" class="input-field" formControlName="email"
+                  placeholder="Email address" />
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="px-1 text-xs font-semibold">Date of
-                birth</label>
+              <label for="birthdate" class="px-1 text-xs font-semibold">Date of birth</label>
               <div class="flex w-full ml-10">
-                <input type="email"
-                  class="input-field"
-                  placeholder="Date of birth">
+                <input id="birthdate" type="text" formControlName="birthdate" class="input-field"
+                  placeholder="Date of birth" />
               </div>
             </div>
           </div>
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <label for class="px-1 text-xs font-semibold">Phone Number</label>
+              <label for="contact" class="px-1 text-xs font-semibold">Phone Number</label>
               <div class="flex w-full ml-10">
-                <input type="email"
-                  class="input-field"
-                  placeholder="Phone number">
-              </div>
-            </div>
-          </div>
-          <div class="flex -mx-3">
-            <div class="w-full px-3 mb-5">
-              <label for class="px-1 text-xs font-semibold">Password</label>
-              <div class="flex w-full ml-10">
-                <input type="password"
-                  class="input-field"
-                  placeholder="Enter password">
+                <input id="contact" type="text" formControlName="contact" class="input-field" placeholder="Phone number" />
               </div>
             </div>
           </div>
@@ -86,12 +65,13 @@
           </div>
           <div class="flex -mx-3">
             <div class="w-full">
-              <button
-                class="text-white bg-indigo-500 rounded-lg btn hover:bg-indigo-700 focus:bg-indigo-700">REGISTER
-                NOW</button>
+              <button [disabled]="!signUpForm.valid" class="text-white bg-indigo-500 rounded-lg btn hover:bg-indigo-700 focus:bg-indigo-700"
+                type="submit">
+                REGISTER NOW
+              </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

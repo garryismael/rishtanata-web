@@ -1,17 +1,34 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import {
+  ApplicationConfig,
+  Provider,
+  importProvidersFrom,
+} from '@angular/core';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { routes } from './app.routes';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
+import { ApiInterceptor } from './utils/http';
+
+export const apiInterceptorProvider: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: ApiInterceptor,
+  multi: true,
+};
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    provideRouter(routes, withComponentInputBinding()),
     provideClientHydration(),
     provideAnimations(),
     importProvidersFrom(HttpClientModule),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    apiInterceptorProvider,
   ],
 };

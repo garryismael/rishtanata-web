@@ -1,1 +1,40 @@
-<p>email-verification works!</p>
+<div class="flex items-center justify-center min-h-screen px-5 py-5 bg-white min-w-screen">
+  <div class="w-full overflow-hidden text-gray-500 bg-gray-100 shadow-xl rounded-3xl md:w-1/3" style="max-width: 1000px">
+    <div class="w-full md:flex">
+      <div class="w-full px-5 py-10  md:px-5">
+        <div class="mb-10 text-center">
+          <h1 class="text-3xl font-bold text-gray-900">ACCOUNT</h1>
+          <p>Create a password before login.</p>
+        </div>
+        <form [formGroup]="formGroup" #form="ngForm" (ngSubmit)="submit()">
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+              <label for="password" class="px-1 text-xs font-semibold">Password</label>
+              <div class="flex w-full ml-10">
+                <input id="password" type="password" formControlName="password" class="input-field"
+                  placeholder="Your Password" />
+              </div>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+              <label for="confirm_password" class="px-1 text-xs font-semibold">Confirm your password</label>
+              <div class="flex w-full ml-10">
+                <input id="confirm_password" type="password" formControlName="confirm_password" class="input-field"
+                  placeholder="Retype the previous password" />
+              </div>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full">
+              <button [disabled]="!formGroup.valid"
+                class="text-white bg-indigo-500 rounded-lg btn hover:bg-indigo-700 focus:bg-indigo-700" type="submit">
+                SUBMIT
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
