@@ -32,7 +32,7 @@ export const routes: Routes = [
         component: EmailNotifyComponent,
       },
       {
-        path: 'email-verify',
+        path: 'email-verify/:token',
         component: EmailVerificationComponent,
       },
     ],
