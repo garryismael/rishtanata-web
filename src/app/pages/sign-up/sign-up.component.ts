@@ -21,7 +21,7 @@ export class SignUpComponent {
   submit(): void {
     if (this.signUpForm.valid) {
       this.userService
-        .createUserAccount({
+        .registerUser({
           full_name: this.signUpForm.controls['full_name'].value as string,
           gender: this.signUpForm.controls['gender'].value as string,
           email: this.signUpForm.controls['email'].value as string,

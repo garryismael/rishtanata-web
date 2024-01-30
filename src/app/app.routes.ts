@@ -2,11 +2,12 @@ import { Routes } from '@angular/router';
 import { AuthComponent } from './components/shared/auth/auth.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
 import { EmailNotifyComponent } from './pages/email-notify/email-notify.component';
+import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
       },
       {
         path: 'email-notify',
