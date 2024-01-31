@@ -43,3 +43,6 @@
     @apply bg-indigo-800 w-full hover:bg-indigo-700;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

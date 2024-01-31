@@ -31,6 +31,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(HttpClientModule),
     provideHttpClient(withFetch()),
     apiInterceptorProvider,
-    provideStore()
+    provideStore(),
+    provideAnimations()
 ],
 };
