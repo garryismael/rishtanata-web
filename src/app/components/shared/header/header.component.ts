@@ -1,6 +1,6 @@
 import { AuthService } from '@/app/services/auth.service';
 import { NgOptimizedImage } from '@angular/common';
-import { Component, afterNextRender, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, afterNextRender, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -14,9 +14,10 @@ export class HeaderComponent {
   authService: AuthService = inject(AuthService);
   authenticated = false;
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef) {
     afterNextRender(() => {
       this.authenticated = this.authService.isAuthenticated();
+      cdr.detectChanges();
     })
   }
 }
