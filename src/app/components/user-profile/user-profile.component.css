@@ -3,6 +3,10 @@
   max-width: 33.333333%;
 }
 
+p {
+  @apply !m-0;
+}
+
 .info {
-  @apply flex items-center;
+  @apply flex flex-col;
 }
