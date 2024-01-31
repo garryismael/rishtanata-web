@@ -6,7 +6,10 @@ import { EmailNotifyComponent } from './pages/email-notify/email-notify.componen
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PreferenceComponent } from './pages/preference/preference.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProposalComponent } from './pages/proposal/proposal.component';
+import { SearchComponent } from './pages/search/search.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
@@ -32,7 +35,7 @@ export const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
-        canActivate: [authGuard]
+        canActivate: [authGuard],
       },
       {
         path: 'email-notify',
@@ -41,6 +44,18 @@ export const routes: Routes = [
       {
         path: 'email-verify/:token',
         component: EmailVerificationComponent,
+      },
+      {
+        path: 'search',
+        component: SearchComponent,
+      },
+      {
+        path: 'proposals',
+        component: ProposalComponent,
+      },
+      {
+        path: 'preferences',
+        component: PreferenceComponent,
       },
     ],
   },
