@@ -1,6 +1,5 @@
-import { LoginForm } from '@/models/auth';
+import { LoginForm, Token } from '@/models/auth';
 import { HttpClient } from '@angular/common/http';
-import { Token } from '@angular/compiler';
 import { Injectable, inject } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { handleError } from './http.service';

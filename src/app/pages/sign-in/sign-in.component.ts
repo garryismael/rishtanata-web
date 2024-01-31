@@ -4,6 +4,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,10 +12,12 @@ import { Router, RouterLink } from '@angular/router';
   imports: [NgOptimizedImage, RouterLink, ReactiveFormsModule],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css',
+  providers: [CookieService]
 })
 export class SignInComponent {
   private router: Router = inject(Router);
   private authService: AuthService = inject(AuthService);
+  private cookieService: CookieService = inject(CookieService);
   signInForm = signInForm;
 
   login(): void {
@@ -25,7 +28,7 @@ export class SignInComponent {
           password: this.signInForm.controls['password'].value as string
         })
         .subscribe((_token) => {
-          console.log(_token);
+          this.cookieService.set("token", _token.access_token);
           this.router.navigateByUrl('/profile');
         });
     } else {
