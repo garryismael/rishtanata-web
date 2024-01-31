@@ -15,6 +15,7 @@ import {
   withFetch,
 } from '@angular/common/http';
 import { ApiInterceptor } from './utils/http';
+import { provideStore } from '@ngrx/store';
 
 export const apiInterceptorProvider: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -30,5 +31,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(HttpClientModule),
     provideHttpClient(withFetch()),
     apiInterceptorProvider,
-  ],
+    provideStore()
+],
 };

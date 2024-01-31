@@ -1,9 +1,35 @@
-<header class="text-white bg-indigo-500 fixed top-0 w-full h-24">
+<header class="fixed top-0 w-full h-24 text-white bg-indigo-500">
   <div class="container flex items-center justify-between py-6 mx-auto">
     <div class="flex items-center gap-2">
-      <img ngSrc="/assets/images/logo.svg" alt="Logo" width="34" height="34"/>
+      <img ngSrc="/assets/images/logo.svg" alt="Logo" width="34" height="34" />
       <span class="text-lg font-bold">Logo</span>
     </div>
+    <nav>
+      <ul class="flex items-center gap-24">
+        <li>
+          <a routerLink="/profile">Profile</a>
+        </li>
+        <li>
+          <a routerLink="/search">Search</a>
+        </li>
+        <li>
+          <a routerLink="/proposal">Proposals</a>
+        </li>
+        <li>
+          <a routerLink="/search">Preferences</a>
+        </li>
+      </ul>
+    </nav>
+    @if (authenticated) {
+    <nav>
+      <ul class="flex items-center gap-6">
+        <li class="border border-white btn">
+          <a routerLink="/auth/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    }
+    @else {
     <nav>
       <ul class="flex items-center gap-6">
         <li class="border border-white btn">
@@ -14,5 +40,7 @@
         </li>
       </ul>
     </nav>
+    }
+
   </div>
 </header>

@@ -1,5 +1,6 @@
+import { AuthService } from '@/app/services/auth.service';
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, afterNextRender, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -7,8 +8,15 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [NgOptimizedImage, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  authService: AuthService = inject(AuthService);
+  authenticated = false;
 
+  constructor() {
+    afterNextRender(() => {
+      this.authenticated = this.authService.isAuthenticated();
+    })
+  }
 }
