@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AuthComponent } from './components/shared/auth/auth.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
+import { authGuard } from './guards/auth.guard';
 import { EmailNotifyComponent } from './pages/email-notify/email-notify.component';
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -31,6 +32,7 @@ export const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
+        canActivate: [authGuard]
       },
       {
         path: 'email-notify',
