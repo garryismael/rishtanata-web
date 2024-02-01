@@ -12,6 +12,9 @@ import { ProposalComponent } from './pages/proposal/proposal.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import path from 'path';
+import { ProfileGeneralComponent } from './pages/profile/profile-general/profile-general.component';
+import { EditProfileComponent } from './pages/profile/edit-profile/edit-profile.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +39,16 @@ export const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
         canActivate: [authGuard],
+        children: [
+          {
+            path: '',
+            component: ProfileGeneralComponent,
+          },
+          {
+            path: 'edit',
+            component: EditProfileComponent
+          }
+        ],
       },
       {
         path: 'email-notify',

@@ -1,0 +1,49 @@
+<div class="flex justify-center px-5 py-5 bg-white w-full">
+  <div class="w-full overflow-hidden text-gray-500 bg-white shadow-md rounded-3xl">
+    <div class="flex gap-12 p-12">
+      <div class="flex flex-col">
+        <div class="relative">
+          <img ngSrc="/assets/images/profile.jpeg" class="w-full h-auto" height="183" width="275" />
+          <button class="absolute bottom-0 left-0 right-0 w-full px-4 py-2 text-white bg-gray-600 bg-opacity-50">Change
+            photo</button>
+        </div>
+        <div class="py-2 text-center">
+          My Bio
+        </div>
+        <div class="flex flex-col items-center py-5">
+          <div>
+            <p-knob [(ngModel)]="value" [readonly]="true"></p-knob>
+          </div>
+          <button
+            class="px-4 py-2 my-3 text-sm font-semibold leading-5 text-indigo-500 border border-indigo-500 rounded-full hover:bg-indigo-700 hover:text-white">
+            Send Approval
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-col w-full gap-4 my-5">
+        <div class="flex justify-between">
+          <div class="flex flex-col">
+            <div class="flex flex-col gap-2">
+              <div>
+                <h1 class="text-xl !m-0">Angela Morgan</h1>
+                <p class="text-xs">999 Ahmadiyya Ave Maple Canada</p>
+                <p class="text-xs">morgan&#64;gmail.com</p>
+                <p class="text-xs">+261345878961</p>
+              </div>
+              <p class="text-sm text-indigo-500">
+                <span>Never Married</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <a
+              routerLink="/profile/edit"
+              class="px-5 py-2 text-sm font-semibold leading-5 text-white bg-indigo-500 rounded-full hover:bg-indigo-700">
+              Edit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
