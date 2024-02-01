@@ -9,9 +9,6 @@ import { MatDividerModule } from '@angular/material/divider';
   standalone: true,
   imports: [
     NgOptimizedImage,
-    MatProgressSpinnerModule,
-    MatTabsModule,
-    MatDividerModule,
   ],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css',
